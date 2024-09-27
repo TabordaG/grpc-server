@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package grpc_demo;
+
+message EmptyResponse {}
+
+message Event {
+  string userId = 1;
+  string eventName = 2;
+  string eventContent = 3;
+}
+
+service EventService {
+  rpc TrackEvent (Event) returns (EmptyResponse);
+}
